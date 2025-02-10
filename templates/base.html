@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Thesis Recommendation System{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico')}}">
+</head>
+<body>
+    <div class="container mt-5">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="flag-container">
+        <img src="{{ url_for('static', filename='flags/en.png') }}" alt="English" data-lang="en" class="flag" />
+        <img src="{{ url_for('static', filename='flags/cz.png') }}" alt="Czech" data-lang="cz" class="flag" />
+        <img src="{{ url_for('static', filename='flags/ukr.png') }}" alt="Ukrainian" data-lang="ukr" class="flag" />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

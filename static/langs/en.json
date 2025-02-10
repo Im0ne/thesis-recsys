@@ -1,0 +1,20 @@
+{
+    "title": "Thesis Recommendation System",
+    "keywords_label": "Enter keywords:",
+    "approach_label": "Select approach:",
+    "submit_button": "Get Recommendations",
+    "recommendations_heading": "Recommendations",
+    "no_recommendations": "No recommendations found.",
+    "theme_label": "Theme:",
+    "supervisor_label": "Supervisor:",
+    "error_title": "Error",
+    "error_message": "An error occurred. Please try again later.",
+    "go_back_button": "Go Back",
+    "targets_label": "Targets:",
+    "work_type_label": "Select type of work:",
+    "bachelor_label": "Bachelor's Thesis",
+    "diploma_label": "Master's Thesis",
+    "dissertation_label": "Dissertation",
+    "prev_button": "Previous",
+    "next_button": "Next"
+}

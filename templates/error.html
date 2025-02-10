@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}{{ _('error_title') }}{% endblock %}
+{% block content %}
+<h1 id="error-title">{{ _('error_title') }}</h1>
+<p id="error-message">{{ _('error_message') }}</p>
+<button id="goBackBtn" class="btn btn-primary">{{ _('go_back_button') }}</button>
+{% endblock %}

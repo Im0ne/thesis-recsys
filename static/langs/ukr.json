@@ -1,0 +1,20 @@
+{
+    "title": "Система рекомендацій для фінальних праць",
+    "keywords_label": "Введіть ключові слова:",
+    "approach_label": "Виберіть підхід:",
+    "submit_button": "Отримати рекомендації",
+    "recommendations_heading": "Рекомендації",
+    "no_recommendations": "Рекомендацій не знайдено.",
+    "theme_label": "Тема:",
+    "supervisor_label": "Керівник:",
+    "error_title": "Помилка",
+    "error_message": "Сталася помилка. Будь ласка, спробуйте пізніше.",
+    "go_back_button": "Повернутися",
+    "targets_label": "Цілі:",
+    "work_type_label": "Виберіть тип роботи:",
+    "bachelor_label": "Бакалаврська робота",
+    "diploma_label": "Магістерська робота",
+    "dissertation_label": "Дисертація",
+    "prev_button": "Попередня",
+    "next_button": "Наступна"
+}

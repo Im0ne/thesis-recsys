@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Thesis Recommendation System{% endblock %}
+
+{% block content %}
+<h1 id="title">Thesis Recommendation System</h1>
+<form id="recommendationForm">
+    <div class="form-group">
+        <label id="keywords-label" for="keywords">Enter keywords:</label>
+        <input type="text" class="form-control" id="keywords" name="keywords" required>
+    </div>
+    <div class="form-group">
+        <label id="approach-label" for="approach">Select approach:</label>
+        <select class="form-control" id="approach" name="approach" required>
+            <option value="tfidf">TF-IDF</option>
+            <option value="bert">BERT</option>
+            <option value="sbert">SBERT</option>
+            <option value="roberta">RoBERTa</option>
+            <option value="distilbert">DistilBERT</option>
+            <option value="albert">ALBERT</option>
+            <option value="xlnet">XLNet</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label id="work-type-label" for="workType">Select type of work:</label><br>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="workType" id="bachelor" value="bakalářská práce" required checked>
+            <label class="form-check-label" for="bachelor">Bachelor's Thesis</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="workType" id="diploma" value="diplomová práce" required>
+            <label class="form-check-label" for="diploma">Master's Thesis</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="workType" id="dissertation" value="dizertační práce" required>
+            <label class="form-check-label" for="dissertation">Dissertation</label>
+        </div>
+    </div>
+    <button id="submit-button" type="submit" class="btn btn-primary">Get Recommendations</button>
+</form>
+<div class="mt-5" id="recommendations-section" style="display: none;">
+    <h2 id="recommendations-heading">Recommendations</h2>
+    <ul id="recommendations" class="list-group"></ul>
+    <div class="pagination-buttons">
+        <button id="prev-button" class="btn btn-secondary" disabled>&larr; Previous</button>
+        <button id="next-button" class="btn btn-secondary" disabled>Next &rarr;</button>
+    </div>
+</div>
+{% endblock %}

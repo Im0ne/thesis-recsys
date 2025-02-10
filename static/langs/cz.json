@@ -1,0 +1,20 @@
+{
+    "title": "Doporučovací systém pro závěřečné práce",
+    "keywords_label": "Zadejte klíčová slova:",
+    "approach_label": "Vyberte přístup:",
+    "submit_button": "Získat doporučení",
+    "recommendations_heading": "Doporučení",
+    "no_recommendations": "Doporučení nebyla nalezena.",
+    "theme_label": "Téma:",
+    "supervisor_label": "Vedoucí:",
+    "error_title": "Chyba",
+    "error_message": "Došlo k chybě. Zkuste to prosím později.",
+    "go_back_button": "Zpět",
+    "targets_label": "Cíle:",
+    "work_type_label": "Vyberte typ práce:",
+    "bachelor_label": "Bakalářská práce",
+    "diploma_label": "Diplomová práce",
+    "dissertation_label": "Dizertační práce",
+    "prev_button": "Předchozí",
+    "next_button": "Další"
+}
