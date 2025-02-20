@@ -101,6 +101,14 @@ $(document).ready(function() {
     }
 
     $('#recommendationForm').on('submit', function(e) {
+        const keywords = $('#keywords').val();
+        if (keywords.length > 512) {
+          e.preventDefault();
+          $('#formErrorContainer')
+            .text('Keywords cannot exceed 512 characters.')
+            .show();
+          return;
+        }
         e.preventDefault();
         offset = 0;
         fetchRecommendations(true); 

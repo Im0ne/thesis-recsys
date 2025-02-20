@@ -3,7 +3,6 @@
 
 import pandas as pd
 import torch
-import json
 import numpy as np
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_babel import Babel, _
@@ -20,16 +19,16 @@ import re
 import time
 import tracemalloc
 
-# Load data
-data = pd.read_json('./themes.json', encoding='utf-8')
-data['Combined_CZ'] = data['Name_CZ'].fillna('') + " " + data['Targets_CZ'].fillna('')
-data['Combined_EN'] = data['Name_EN'].fillna('') + " " + data['Targets_EN'].fillna('')
-
 def strip_html(text):
     if isinstance(text, str):
         clean = re.compile('<.*?>')
         return re.sub(clean, '', text)
     return ""
+
+# Load data
+data = pd.read_json('./themes.json', encoding='utf-8')
+data['Combined_CZ'] = data['Name_CZ'].fillna('').apply(strip_html) + " " + data['Targets_CZ'].fillna('').apply(strip_html)
+data['Combined_EN'] = data['Name_EN'].fillna('').apply(strip_html) + " " + data['Targets_EN'].fillna('').apply(strip_html)
 
 def load_bert(language='CZ'):
     if language == 'CZ':
@@ -289,7 +288,7 @@ def get_recommendations():
         embedding_key = approach
 
         # Select the correct embeddings dictionary based on language
-        thesis_embeddings = embeddings_dict_CZ.get(embedding_key) # Add check for language for english if needed
+        thesis_embeddings = embeddings_dict_CZ.get(embedding_key) # Add check for english if needed
 
         if thesis_embeddings is None:
             print(f"Error: Embeddings for '{embedding_key}' not found in {'CZ' if language == 'CZ' else 'EN'} dictionary.")
@@ -340,4 +339,6 @@ def get_recommendations():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
+    ngrok_tunnel = ngrok.connect(5000)
+    print(f'Public URL: {ngrok_tunnel.public_url}')
     app.run(port=5000)
