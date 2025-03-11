@@ -4,8 +4,7 @@
 import pandas as pd
 import torch
 import numpy as np
-from flask import Flask, request, jsonify, render_template, send_from_directory
-from flask_babel import Babel, _
+from flask import Flask, request, jsonify, render_template
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from transformers import (BertTokenizer, BertModel,
@@ -265,7 +264,6 @@ embeddings_dict_CZ = {model: thesis_embeddings_CZ[model] for model in models_lis
 
 app = Flask(__name__, template_folder='./templates',
                       static_folder='./static')
-babel = Babel(app)
 
 @app.route('/')
 def index():
