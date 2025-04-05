@@ -18,6 +18,7 @@ import re
 import time
 import tracemalloc
 
+# Function to strip HTML tags from text
 def strip_html(text):
     if isinstance(text, str):
         clean = re.compile('<.*?>')
@@ -26,6 +27,8 @@ def strip_html(text):
 
 # Load data
 data = pd.read_json('./themes.json', encoding='utf-8')
+
+# Preprocess data
 data['Combined_CZ'] = data['Name_CZ'].fillna('').apply(strip_html) + " " + data['Targets_CZ'].fillna('').apply(strip_html)
 data['Combined_EN'] = data['Name_EN'].fillna('').apply(strip_html) + " " + data['Targets_EN'].fillna('').apply(strip_html)
 
