@@ -11,10 +11,10 @@ This project is a Flask-based web application that provides thesis recommendatio
 
 ## Technologies Used
 
-- **Backend**: Flask, PyTorch, scikit-learn, Hugging Face Transformers
+- **Backend**: Flask, PyTorch, Hugging Face Transformers
 - **Frontend**: HTML, CSS, JavaScript (jQuery)
-- **Data Processing**: Pandas, Sentence Transformers
-- **Deployment**: ngrok (for development), Google Cloud Run (for production)
+- **Data Processing**: Pandas, Sentence Transformers, scikit-learn
+- **Deployment**: ngrok, Google Cloud Run 
 
 ## Installation
 
